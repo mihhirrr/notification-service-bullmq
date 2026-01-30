@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# notification-service-bullmq
-Basic notification service with BullMQ, Redis and Node-mailer
-=======
 # Notification Service with BullMQ and Nodemailer
 
 This is a basic notification service demonstrating the use of [BullMQ](https://bullmq.io/) for message queuing and [Nodemailer](https://nodemailer.com/) for sending emails. This service is designed for learning and testing purposes.
@@ -24,7 +20,7 @@ This is a basic notification service demonstrating the use of [BullMQ](https://b
 ### Prerequisites
 
 *   Node.js installed
-*   Redis server running
+*   Redis server running (BullMQ uses Redis for its queue)
 *   A Gmail account and an App Password for that account (refer to [Nodemailer's documentation](https://nodemailer.com/usage/gmail/) for details on how to set this up).
 
 ### Installation
@@ -69,4 +65,3 @@ You should see output in both terminals indicating the job being added and proce
 *   `dotenv`: ^17.2.3 - Loads environment variables from a `.env` file.
 *   `nodemailer`: ^7.0.13 - Send e-mails from Node.js.
 *   `nodemon`: ^3.1.11 - Automatically restarts the node application when file changes are detected.
->>>>>>> abab6e2 (Basic notification service with BullMQ, Redis and Node-mailer)
