@@ -1,15 +1,20 @@
 name: "Test Notification Service"
 
-on: push
+on: 
+  push:
+    branches: [main]
 
-  jobs:
-    deploy:
-      runs-on: ubuntu-latest
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
-      steps:
-        - uses: actions/setup-node@v3
-            with:
-              node-version: 20
-        - uses: actions/checkout@v3
-    
-        - run: docker compose -d up
+    steps:
+
+      - uses: actions/checkout@v3
+        
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+            
+      - name: Run docker compose to start the app
+        run: docker compose -d up
