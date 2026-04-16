@@ -2,7 +2,7 @@ const { Queue } = require('bullmq')
 
 const notificationQueue = new Queue('email-queue', {
     connection: {
-        host: '127.0.0.1',
+        host: 'redis',
         port: '6379'
     }
 })

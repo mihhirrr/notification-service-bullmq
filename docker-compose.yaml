@@ -1,0 +1,29 @@
+version: "3.0"
+
+services:
+  redis:
+    image: redis:8.6.2-alpine
+    container_name: redis
+    volumes: 
+      - redis-data:/data
+    command: ["redis-server", "--appendonly", "yes"]
+    networks: 
+      - custom-bridge-network
+    ports: 
+      - "6379:6379"
+  node:
+    build:
+      context: .
+    container_name: nodemailer
+    depends_on: 
+      - redis
+    networks:
+      - custom-bridge-network
+    env_file: 
+      - .env
+
+networks:
+  custom-bridge-network:
+
+volumes:
+  redis-data:
