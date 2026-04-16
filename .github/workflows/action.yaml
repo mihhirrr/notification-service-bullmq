@@ -17,4 +17,4 @@ jobs:
           node-version: 20
             
       - name: Run docker compose to start the app
-        run: docker compose -d up
+        run: docker compose up -d
